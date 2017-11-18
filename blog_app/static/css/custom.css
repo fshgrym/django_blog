@@ -347,6 +347,9 @@ img {
     padding: 10px 0 0;
     font-weight: 400;
 }
+.toc{
+    padding-top: 110px;
+}
 
 .widget-recent-posts ul {
     padding: 0;
@@ -816,6 +819,7 @@ img {
     .post {
         background: #fff;
         padding: 0 10px 0;
+        padding-top: 110px;
     }
 
     .more-link {

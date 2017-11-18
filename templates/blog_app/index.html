@@ -3,7 +3,7 @@
 {% block main %}
 <main>
 {% for post in post_list %}
-     <article class="post post-{{ post.pk }}">
+     <article class="toc post post-{{ post.pk }}">
          <header class="entry-header">
              <h1 class="entry-title">
                  <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
@@ -18,7 +18,7 @@
              </div>
          </header>
          <div class="entry-content clearfix">
-             <p>{{ post.body|truncatewords_html:54|striptags }}</p>
+             <p>{{ post.body|truncatechars_html:54|striptags|safe }}</p>
              <div class="read-more cl-effect-14">
                  <a href="{{ post.get_absolute_url }}" class="more-link">阅读全文 <span class="meta-nav">→</span></a>
              </div>

@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 's-lk^--+nb!s8z^ykd*5emmg-zzl^5#04$&i)%m*cj77=(5_du'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['39.108.10.232','127.0.0.1']
 
@@ -123,9 +123,9 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT=os.path.join(BASE_DIR,'static')
 # 公共的 static 文件，比如 jquery.js 可以放这里，这里面的文件夹不能包含 STATIC_ROOT
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, "common_static"),
-)
+#STATICFILES_DIRS = (
+#    os.path.join(BASE_DIR, "common_static"),
+#)
 
 # upload folder
 MEDIA_URL = '/media/'
