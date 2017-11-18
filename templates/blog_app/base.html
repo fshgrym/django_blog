@@ -36,8 +36,9 @@
         <div class="row">
             <div class="col-md-4 col-sm-5 col-xs-8">
                 <div class="logo">
-                    <h1><a href="{% url 'blog_app:index' %}">ド゛゜范</a></h1>
+                    <a href="{% url 'blog_app:index' %}"><img src="{% static 'img/logo.png' %}" alt=""/></a>
                 </div>
+
             </div><!-- col-md-4 -->
             <div class="col-md-8 col-sm-7 col-xs-4">
                 <nav class="main-nav" role="navigation">
@@ -51,7 +52,7 @@
                             <li class="cl-effect-11"><a href="{% url 'blog_app:index' %}" data-hover="首页">首页</a></li>
                             <li class="cl-effect-11"><a href="#" data-hover="博客">博客</a></li>
                             <li class="cl-effect-11"><a href="about.html" data-hover="关于">关于</a></li>
-                            <li class="cl-effect-11"><a href="contact.html" data-hover="联系">联系</a></li>
+                            <li class="cl-effect-11"><a href="{% url 'comments:contact'%}" data-hover="联系">联系</a></li>
                         </ul>
                     </div><!-- /.navbar-collapse -->
                 </nav>
@@ -93,8 +94,11 @@
         </ul>
     </div>
             </main>
-            <aside class="col-md-4">
-                {% block toc %}{% endblock toc %}
+            <aside class="col-md-4 toc">
+    <!-- <div class="widget widget-content">
+        <h3 class="widget-title">文章目录</h3>
+        {{ post.toc|safe }}
+    </div> -->
                 <div class="widget widget-recent-posts">
                     <h3 class="widget-title">最新文章</h3>
                     {% get_recent_posts as recent_post_list %}
@@ -114,6 +118,7 @@
                         {% endfor %}
                     </ul>
                 </div>
+
                 <div class="widget widget-archives">
                     <h3 class="widget-title">归档</h3>
                     {% archives as date_list %}
@@ -157,8 +162,9 @@
                         {% endfor %}
                     </ul>
                 </div>
+
                 <div class="rss">
-                    <a href=""><span class="ion-social-rss-outline"></span> RSS 订阅</a>
+                    <a href="{% url 'blog_app:rss' %}"><span class="ion-social-rss-outline"></span> RSS 订阅</a>
                 </div>
             </aside>
         </div>
